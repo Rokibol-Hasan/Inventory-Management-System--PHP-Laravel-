@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
 
 Route::get('/', function () {
@@ -35,7 +36,15 @@ Route::controller(SupplierController::class)->group(function () {
     Route::post('/supplier/store', 'supplierStore')->name('supplier.store');
 
     Route::get('/supplier/edit/{id}', 'supplierEdit')->name('supplier.edit');
+    Route::post('/supplier/update/', 'supplierUpdate')->name('supplier.update');
     Route::get('/supplier/delete/{id}', 'supplierDelete')->name('supplier.delete');
+});
+
+
+// Customer all route
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('/customer/all', 'customerAll')->name('customer.all');
+
 });
 
 

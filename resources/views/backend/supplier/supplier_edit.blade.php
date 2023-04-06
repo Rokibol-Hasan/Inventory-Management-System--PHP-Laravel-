@@ -9,9 +9,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Edit Supplier Page</h4><br><br>
-                            <form method="post" action="" id="myForm">
+                            <form method="post" action="{{route('supplier.update')}}" id="myForm">
                                 @csrf
-
+                                <input type="hidden" name="id" value="{{ $supplier->id }}">
                                 <div class="row mb-3">
                                     <label for="name" class="col-sm-2 col-form-label">Supplier Name</label>
                                     <div class="form-group col-sm-10">

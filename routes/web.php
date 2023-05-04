@@ -44,6 +44,14 @@ Route::controller(SupplierController::class)->group(function () {
 // Customer all route
 Route::controller(CustomerController::class)->group(function () {
     Route::get('/customer/all', 'customerAll')->name('customer.all');
+    Route::get('/customer/add', 'customerAdd')->name('customer.add');
+    Route::post('/customer/store', 'customerStore')->name('customer.store');
+
+    Route::get('/customer/edit/{id}', 'customerEdit')->name('customer.edit');
+    Route::post('/customer/update', 'customerUpdate')->name('customer.update');
+    Route::get('/customer/delete/{id}', 'customerDelete')->name('customer.delete');
+
+
 
 });
 

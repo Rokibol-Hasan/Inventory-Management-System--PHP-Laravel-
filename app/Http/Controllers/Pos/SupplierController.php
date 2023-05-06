@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class SupplierController extends Controller
 {
 
-    public function SupplierAll()
+    public function supplierAll()
     {
         $suppliers = Supplier::latest()->get();
         return view('backend.supplier.supplier_all', compact('suppliers'));

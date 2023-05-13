@@ -3,4 +3,5 @@
 3.start form 002 Customers Page Setup Part 2.mp4
 4. start form 18. Manage Units
 5. start from 20. manage products
-6.004 Products Page Setup Part 4.mp4 //todo
+6.004 Products Page Setup Part 4.mp4
+7.21 - Setup Purchase Management //todo

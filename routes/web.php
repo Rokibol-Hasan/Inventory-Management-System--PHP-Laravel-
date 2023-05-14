@@ -4,13 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
+use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 
 
@@ -84,6 +86,21 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/product/delete/{id}', 'productDelete')->name('product.delete');
 });
 
+
+// purchase all route
+Route::controller(PurchaseController::class)->group(function () {
+    Route::get('/purchase/all', 'purchaseAll')->name('purchase.all');
+    Route::get('/purchase/add', 'purchaseAdd')->name('purchase.add');
+
+    Route::get('/purchase/store', 'purchaseStore')->name('purchase.store');
+});
+
+
+// Default all route
+Route::controller(DefaultController::class)->group(function () {
+    Route::get('/get-category', 'getCategory')->name('get-category');
+    Route::get('/get-product', 'getProduct')->name('get-product');
+});
 
 
 

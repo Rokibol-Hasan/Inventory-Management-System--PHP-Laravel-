@@ -8,9 +8,16 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Add Purchase Page</h4><br><br>
+                            <h4 class="card-title">Add Invoice Page</h4><br><br>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-2">
+                                    <div class="md-3">
+                                        <label for="purchase_no" class="col-form-label">Invoice No</label>
+                                        <input type="text" readonly style="background-color:#ddd" name="invoice_no"
+                                            class="form-control" id="invoice_no">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
                                     <div class="md-3">
                                         <label for="date" class="col-form-label">Date</label>
                                         <input type="date" name="date" class="form-control example-date-input"
@@ -18,37 +25,20 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="md-3">
-                                        <label for="purchase_no" class="col-form-label">Purchase No</label>
-                                        <input type="text" name="purchase_no" class="form-control" id="purchase_no">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="md-3">
-                                        <label for="supplier_id" class="col-form-label">Supplier</label>
-                                        <select name="supplier_id" id="supplier_id" class="form-select select2"
-                                            aria-label="Default select example">
-                                            <option selected="">Select Supplier</option>
-                                            @foreach ($supplier as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="md-3">
                                         <label for="category_id" class="col-form-label">Category</label>
                                         <select name="category_id" class="form-select select2" id="category_id"
                                             aria-label="Default select example">
                                             <option selected="">Open this select menu</option>
+                                            @foreach ($category as $cat)
+                                                <option value="{{ $cat->id }}"> {{ $cat->name }} </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="md-3">
                                         <label for="product_id" class="col-form-label">Product</label>
                                         <select name="product_id" class="form-select select2 -bottom-3" id="product_id"
@@ -59,7 +49,15 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-2">
+                                    <div class="md-3">
+                                        <label for="purchase_no" class="col-form-label">Stock(PCS/KG)</label>
+                                        <input type="text" readonly style="background-color:#ddd"
+                                            name="current_stock_qty" class="form-control" id="invoice_no">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
                                     <div class="md-3">
                                         <label for="" class="col-form-label mt-5"></label>
                                         <i
@@ -72,7 +70,7 @@
                         {{-- card-body-end --}}
 
                         <div class="card-body">
-                            <form action="{{route('purchase.store')}}" method="POST">
+                            <form action="{{ route('purchase.store') }}" method="POST">
                                 @csrf
                                 <table class="tabel-sm table-bordered" width="100%" style="border-color:#ddd;">
                                     <thead>
@@ -239,29 +237,6 @@
             }
         });
     </script>
-    <script type="text/javascript">
-        $(function() {
-            $(document).on('change', '#supplier_id', function() {
-                var supplier_id = $(this).val();
-                $.ajax({
-                    url: "{{ route('get-category') }}",
-                    type: "GET",
-                    data: {
-                        supplier_id: supplier_id
-                    },
-                    success: function(data) {
-                        var html = '<option value="">Select Category</option>';
-                        $.each(data, function(key, v) {
-                            html += '<option value=" ' + v.category_id + ' ">' + v
-                                .category.name + ' </option>'
-                        });
-                        $('#category_id').html(html);
-                    }
-                })
-            })
-        })
-    </script>
-
     <script type="text/javascript">
         $(function() {
             $(document).on('change', '#category_id', function() {

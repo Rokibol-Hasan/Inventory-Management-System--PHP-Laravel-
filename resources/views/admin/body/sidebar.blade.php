@@ -18,6 +18,18 @@
                      </a>
                  </li>
 
+                 {{-- <li>
+                     <a href="javascript: void(0);" class="has-arrow waves-effect">
+                         <i class="ri-calendar-2-line"></i>
+                         <span>Own Agro Products</span>
+                     </a>
+                     <ul class="sub-menu" aria-expanded="false">
+                         <li><a href="{{ route('purchase.all') }}">Product Quality Assurance</a></li>
+                         <li><a href="{{ route('purchase.all') }}">All Included Products</a></li>
+                         <li><a href="{{ route('purchase.pending') }}">Pending Products</a></li>
+                     </ul>
+                 </li> --}}
+
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
@@ -75,7 +87,18 @@
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
-                          <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
+                         <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
+                     </ul>
+                 </li>
+
+                 <li>
+                     <a href="javascript: void(0);" class="has-arrow waves-effect">
+                         <i class="ri-calendar-2-line"></i>
+                         <span>Manage Invoice</span>
+                     </a>
+                     <ul class="sub-menu" aria-expanded="false">
+                         <li><a href="{{ route('invoice.all') }}">All Invoices</a></li>
+                         <li><a href="{{ route('purchase.pending') }}">Pending Invoices</a></li>
                      </ul>
                  </li>
 

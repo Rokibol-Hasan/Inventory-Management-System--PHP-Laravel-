@@ -8,5 +8,4 @@
 8.008 Purchase Management Part 8.mp4 //todo (see also 7 er last er query for product)
 
 9. purchase management 10
-
-011 Purchase Management Part 11
+006 Invoice Management Setup Part 5.mp4

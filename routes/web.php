@@ -105,8 +105,8 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::post('/purchase/store', 'purchaseStore')->name('purchase.store');
     Route::get('/purchase/delete/{id}', 'purchaseDelete')->name('purchase.delete');
 
-    // Route::get('/purchase/pending', 'purchasePending')->name('purchase.pending');
-    Route::get('/purchase/approve/{id}', 'purchaseApprove')->name('purchase.approve');
+    // Route::get('/invoice/pending', 'invoicePending')->name('invoice.pending');
+    // Route::get('/purchase/approve/{id}', 'purchaseApprove')->name('purchase.approve');
 });
 
 
@@ -114,6 +114,7 @@ Route::controller(InvoiceController::class)->group(function () {
 Route::controller(DefaultController::class)->group(function () {
     Route::get('/get-category', 'getCategory')->name('get-category');
     Route::get('/get-product', 'getProduct')->name('get-product');
+    Route::get('/check-product-stock', 'getStock')->name('check-product-stock');
 
 });
 

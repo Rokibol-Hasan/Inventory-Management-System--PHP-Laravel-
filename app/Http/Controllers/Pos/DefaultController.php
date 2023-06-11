@@ -17,11 +17,16 @@ class DefaultController extends Controller
     public function getProduct(Request $request)
     {
         $category_id = $request->category_id;
-        // $supplier_id = $request->supplier_id;
         $allProducts = Product::select('*')
         ->where('category_id',$category_id)
-        // ->where('supplier_id',$supplier_id)
         ->get();
         return response()->json($allProducts);
+    }
+
+
+    public function getStock(Request $request){
+        $product_id = $request->product_id;
+        $stock = Product::where('id',$product_id)->first()->quantity;
+        return response()->json($stock);
     }
 }

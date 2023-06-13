@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Purchase;
@@ -24,6 +25,7 @@ class InvoiceController extends Controller
     public function invoiceAdd()
     {
         $category = Category::all();
+        $customer = Customer::all();
         $invoice_data = Invoice::orderBy('id','desc')->first();
         if ($invoice_data == null) {
             $firstReg = '0';
@@ -34,7 +36,7 @@ class InvoiceController extends Controller
             $invoice_no = $invoice_data + 1;
         }
         $date = date('Y-m-d');
-        return view('backend.invoice.invoice_add', compact('category','invoice_no','date'));
+        return view('backend.invoice.invoice_add', compact('category','invoice_no','date','customer'));
     }
 
 

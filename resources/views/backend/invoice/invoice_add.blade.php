@@ -13,15 +13,16 @@
                                 <div class="col-md-2">
                                     <div class="md-3">
                                         <label for="purchase_no" class="col-form-label">Invoice No</label>
-                                        <input type="text" readonly style="background-color:#ddd" value="{{ $invoice_no }}" name="invoice_no"
-                                            class="form-control" id="invoice_no">
+                                        <input type="text" readonly style="background-color:#ddd"
+                                            value="{{ $invoice_no }}" name="invoice_no" class="form-control"
+                                            id="invoice_no">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="md-3">
                                         <label for="date" class="col-form-label">Date</label>
-                                        <input type="date" value="{{ $date }}" name="date" class="form-control example-date-input"
-                                            id="date">
+                                        <input type="date" value="{{ $date }}" name="date"
+                                            class="form-control example-date-input" id="date">
                                     </div>
                                 </div>
 
@@ -88,10 +89,11 @@
 
                                     </tbody>
                                     <tbody>
-                                         <tr>
+                                        <tr>
                                             <td colspan="4">Discount</td>
                                             <td>
-                                                <input type="text" name="discount_amount" id="discount_amount" class="form-control discount_amount" placeholder="Discount amount">
+                                                <input type="text" name="discount_amount" id="discount_amount"
+                                                    class="form-control discount_amount" placeholder="Discount amount">
                                             </td>
                                             <td></td>
                                         </tr>
@@ -113,6 +115,44 @@
                                         <textarea name="description" class="form-control" id="description" placeholder="Write Description Here..."></textarea><br>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label for="paid_status">Paid Status</label>
+                                        <select name="paid_status" id="paid_status" class="form-select">
+                                            <option value="">Select Status</option>
+                                            <option value="full_paid">Full Paid</option>
+                                            <option value="full_due">Full Due</option>
+                                            <option value="partial_paid">Partial Paid</option>
+                                        </select>
+                                        <input type="text" style="display: none" name="paid_amount"
+                                            class="form-control paid_amount mt-2" placeholder="Enter Paid Amount">
+                                    </div>
+
+                                    <div class="form-group col-md-9">
+                                        <label for="customer">Customers</label>
+                                        <select name="customer_id" id="customer_id" class="form-select">
+                                            <option value="">Select Customer</option>
+                                            @foreach ($customer as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }} - {{$item->mobile_no}}</option>
+                                            @endforeach
+                                            <option value="0">Add new customer</option>
+                                        </select>
+                                    </div>
+                                </div> <br>
+
+                                <div class="row new_customer" id="new_customer" style="display: none">
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="customer name">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" name="mobile_no" id="mobile_no" class="form-control" placeholder="write mobile no">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="write customer email">
+                                    </div>
+                                </div><br>
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-info" id="storeButton">Store Invoice</button>
                                 </div>
@@ -215,7 +255,7 @@
                 $(this).closest('tr').find('input.selling_price').val(total);
                 $('#discount_amount').trigger('keyup');
             });
-            $(document).on('keyup','#discount_amount',function(){
+            $(document).on('keyup', '#discount_amount', function() {
                 totalAmountPrice();
             });
             // calculate sum ammount in invoice
@@ -230,8 +270,8 @@
                 });
                 var discount_amount = parseFloat($('#discount_amount').val());
                 if (!isNaN(discount_amount) && discount_amount.length != 0) {
-                        sum -= parseFloat(discount_amount);
-                    }
+                    sum -= parseFloat(discount_amount);
+                }
                 $('#estimated_ammount').val(sum);
             }
         });
@@ -275,5 +315,27 @@
                 })
             })
         })
+    </script>
+
+    <script type="text/javascript">
+        $(document).on('change', '#paid_status', function() {
+            var paid_status = $(this).val();
+            if (paid_status == 'partial_paid') {
+                $('.paid_amount').show();
+            } else {
+                $('.paid_amount').hide();
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).on('change', '#customer_id', function() {
+            var customer = $(this).val();
+            if (customer == '0') {
+                $('.new_customer').show();
+            } else {
+                $('.new_customer').hide();
+            }
+        });
     </script>
 @endsection

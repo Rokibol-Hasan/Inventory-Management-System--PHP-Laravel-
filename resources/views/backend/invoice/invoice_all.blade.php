@@ -29,30 +29,18 @@
                                         <th>Invoice No.</th>
                                         <th>Date</th>
                                         <th>Description</th>
-                                        <th>Action</th>
+                                        <th>Amount</th>
 
                                 </thead>
                                 <tbody>
                                     @foreach ($allData as $key => $item)
                                         <tr>
                                             <td> {{ $key + 1 }} </td>
-                                            <td></td>
+                                            <td>{{ $item['payment']['customer']['name'] }}</td>
                                             <td> {{ $item->invoice_no }} </td>
                                             <td> {{ date('d-m-Y',strtotime($item->date))  }} </td>
                                             <td> {{ $item->description }} </td>
-                                            <td>
-                                                @if ($item->status=='0')
-                                                <span class="btn btn-warning">pending</span>
-                                                @elseif ($item->status=='1')
-                                                <span class="btn btn-success">approved</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if ($item->status=='0')
-                                                <a href="{{ route('purchase.delete', $item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                                @endif
-                                            </td>
+                                            <td>$ {{$item['payment']['total_amount']}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

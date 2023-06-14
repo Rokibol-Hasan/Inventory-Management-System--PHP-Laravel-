@@ -71,7 +71,7 @@
                         {{-- card-body-end --}}
 
                         <div class="card-body">
-                            <form action="{{ route('purchase.store') }}" method="POST">
+                            <form action="{{ route('invoice.store') }}" method="POST">
                                 @csrf
                                 <table class="tabel-sm table-bordered" width="100%" style="border-color:#ddd;">
                                     <thead>
@@ -95,13 +95,12 @@
                                                 <input type="text" name="discount_amount" id="discount_amount"
                                                     class="form-control discount_amount" placeholder="Discount amount">
                                             </td>
-                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td colspan="4"> Grand Total</td>
                                             <td>
-                                                <input type="text" name="estimated_ammount" value="0"
-                                                    id="estimated_ammount" class="form-control estimated_ammountt" readonly
+                                                <input type="text" name="estimated_amount" value="0"
+                                                    id="estimated_amount" class="form-control estimated_amount" readonly
                                                     style="background-color:#ddd">
                                             </td>
                                             <td></td>
@@ -172,7 +171,7 @@
     <script type="text/x-handlebars-template" id="document-template">
     <tr class="delete_add_more_item" id="delete_add_more_item">
         <input type="hidden" name="date" value="@{{date}}">
-        <input type="hidden" name="invoice_no" value="@{{purchase_no}}">
+        <input type="hidden" name="invoice_no" value="@{{invoice_no}}">
 
         <td>
             <input type="hidden" name="category_id[]" value="@{{category_id}}">
@@ -272,7 +271,7 @@
                 if (!isNaN(discount_amount) && discount_amount.length != 0) {
                     sum -= parseFloat(discount_amount);
                 }
-                $('#estimated_ammount').val(sum);
+                $('#estimated_amount').val(sum);
             }
         });
     </script>

@@ -102,7 +102,7 @@ Route::controller(PurchaseController::class)->group(function () {
 Route::controller(InvoiceController::class)->group(function () {
     Route::get('/invoice/all', 'invoiceAll')->name('invoice.all');
     Route::get('/invoice/add', 'invoiceAdd')->name('invoice.add');
-    Route::post('/purchase/store', 'purchaseStore')->name('purchase.store');
+    Route::post('/invoice/store', 'invoiceStore')->name('invoice.store');
     Route::get('/purchase/delete/{id}', 'purchaseDelete')->name('purchase.delete');
 
     // Route::get('/invoice/pending', 'invoicePending')->name('invoice.pending');

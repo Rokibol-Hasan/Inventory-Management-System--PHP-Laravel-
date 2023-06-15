@@ -30,6 +30,8 @@
                                         <th>Date</th>
                                         <th>Description</th>
                                         <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
 
                                 </thead>
                                 <tbody>
@@ -41,6 +43,23 @@
                                             <td> {{ date('d-m-Y',strtotime($item->date))  }} </td>
                                             <td> {{ $item->description }} </td>
                                             <td>$ {{$item['payment']['total_amount']}}</td>
+                                            <td>
+                                               @if ($item->status=='0')
+                                                <span class="btn btn-warning">pending</span>
+                                                @elseif ($item->status=='1')
+                                                <span class="btn btn-success">approved</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($item->status=='0')
+                                                <a href="{{ route('purchase.approve', $item->id) }}" class="btn btn-dark sm" title="Approve Data"> <i class="fas fa-check-circle"></i>
+                                                </a>
+                                                @endif
+                                                @if ($item->status=='0')
+                                                <a href="{{ route('invoice.delete', $item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -108,6 +108,10 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::get('/invoice/approve/{id}', 'invoiceApprove')->name('invoice.approve');
     Route::post('/approval/store/{id}', 'approvalStore')->name('approval.store');
 
+    Route::get('/print/invoice/list', 'printInvoiceList')->name('print.invoice.list');
+    Route::get('/print/invoice/{id}', 'printInvoice')->name('print.invoice');
+
+
 });
 
 

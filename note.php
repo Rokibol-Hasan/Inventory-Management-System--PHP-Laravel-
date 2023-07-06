@@ -17,4 +17,5 @@ Starts From
 
 23 - Manage Invoice View Delete
 24 - Manage Invoice Approval
-25 - Manage Invoice Pdf Generator //todo
+25 - Manage Invoice Pdf Generator
+26 - Manage Daily Invoice Report //todo

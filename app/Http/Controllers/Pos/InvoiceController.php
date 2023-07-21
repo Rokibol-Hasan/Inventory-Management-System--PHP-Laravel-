@@ -200,5 +200,9 @@ class InvoiceController extends Controller
         return view('backend.pdf.invoice_pdf',compact('invoice'));
     }
 
+    public function dailyInvoiceReport(){
+        return view('backend.invoice.daily_invoice_report');
+    }
+
 
 }

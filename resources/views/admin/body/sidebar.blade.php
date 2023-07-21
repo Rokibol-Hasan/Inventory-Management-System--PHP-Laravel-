@@ -13,7 +13,7 @@
 
                  <li>
                      <a href="{{ route('dashboard') }}" class="waves-effect">
-                         <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
+                         <i class="ri-dashboard-line"></i>
                          <span>Dashboard</span>
                      </a>
                  </li>
@@ -33,7 +33,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Supplier</span>
+                         <span>Supplier</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('supplier.all') }}">All Supplier</a></li>
@@ -43,7 +43,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Customers</span>
+                         <span>Customers</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('customer.all') }}">All Customer</a></li>
@@ -53,7 +53,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Unit</span>
+                         <span>Unit</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('unit.all') }}">All Unit</a></li>
@@ -63,7 +63,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Category</span>
+                         <span>Category</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('category.all') }}">All Categories</a></li>
@@ -73,7 +73,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Products</span>
+                         <span>Products</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('product.all') }}">All Products</a></li>
@@ -83,7 +83,7 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Purchase</span>
+                         <span>Purchases</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
@@ -94,12 +94,13 @@
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Manage Invoice</span>
+                         <span>Invoices</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('invoice.all') }}">All Invoices</a></li>
                          <li><a href="{{ route('invoice.pending.list') }}">Pending Invoices</a></li>
-                          <li><a href="{{ route('print.invoice.list') }}">Print Invoice</a></li>
+                         <li><a href="{{ route('print.invoice.list') }}">Print Invoice</a></li>
+                         <li><a href="{{ route('daily.invoice.report') }}">Daily Invoice Report</a></li>
                      </ul>
                  </li>
 

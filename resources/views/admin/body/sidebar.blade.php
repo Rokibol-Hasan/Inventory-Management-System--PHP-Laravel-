@@ -32,7 +32,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class="fas fa-truck-pickup"></i>
                          <span>Supplier</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -42,7 +42,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class="fas fa-user"></i>
                          <span>Customers</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -52,7 +52,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class="fab fa-pushed"></i>
                          <span>Unit</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -62,7 +62,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class="fas fa-clipboard-list"></i>
                          <span>Category</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -72,7 +72,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class="fab fa-product-hunt"></i>
                          <span>Products</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -93,7 +93,7 @@
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="ri-calendar-2-line"></i>
+                         <i class=" fas fa-file-invoice-dollar"></i>
                          <span>Invoices</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">

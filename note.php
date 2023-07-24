@@ -19,4 +19,5 @@ Starts From
 24 - Manage Invoice Approval
 25 - Manage Invoice Pdf Generator
 26 - Manage Daily Invoice Report
-27 - Manage Working Stock Report //todo
+27 - Manage Working Stock Report
+29 - Manage Product Wise Stock Report//todo

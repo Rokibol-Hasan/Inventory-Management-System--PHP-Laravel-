@@ -20,4 +20,5 @@ Starts From
 25 - Manage Invoice Pdf Generator
 26 - Manage Daily Invoice Report
 27 - Manage Working Stock Report
-29 - Manage Product Wise Stock Report//todo
+29 - Manage Product Wise Stock Report
+33 - Manage Customer Edit Invoice//todo

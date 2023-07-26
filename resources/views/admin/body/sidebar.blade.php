@@ -30,6 +30,8 @@
                      </ul>
                  </li> --}}
 
+                 <li class="menu-title">Basic Functions</li>
+
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="fas fa-truck-pickup"></i>
@@ -47,6 +49,7 @@
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('customer.all') }}">All Customer</a></li>
+                          <li><a href="{{ route('credit.customer') }}">Credit Customer</a></li>
                      </ul>
                  </li>
 
@@ -87,7 +90,8 @@
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="{{ route('purchase.all') }}">All Purchase</a></li>
-                         <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
+                         <li><a href="{{ route('purchase.pending') }}">Pending Purchase</a></li>
+                         <li><a href="{{ route('daily.purchase.report') }}">Daily Purchase Report</a></li>
                      </ul>
                  </li>
 
@@ -104,7 +108,7 @@
                      </ul>
                  </li>
 
-                 <li class="menu-title">Stock</li>
+                 <li class="menu-title">Stock Management</li>
 
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -112,8 +116,8 @@
                          <span>Manage Stock</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
-                         <li><a href="{{route('stock.report')}}">Stock Report</a></li>
-                         <li><a href="{{route('stock.supplier.wise')}}">Supplier/Product Wise</a></li>
+                         <li><a href="{{ route('stock.report') }}">Stock Report</a></li>
+                         <li><a href="{{ route('stock.supplier.wise') }}">Supplier/Product Wise</a></li>
                      </ul>
                  </li>
 

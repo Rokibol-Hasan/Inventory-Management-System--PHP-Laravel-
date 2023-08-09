@@ -18,17 +18,19 @@
                      </a>
                  </li>
 
-                 {{-- <li>
+                 <li class="menu-title">Self Product Options</li>
+
+                 <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
                          <i class="ri-calendar-2-line"></i>
-                         <span>Own Agro Products</span>
+                         <span>Add New Products</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
-                         <li><a href="{{ route('purchase.all') }}">Product Quality Assurance</a></li>
+                         <li><a href="{{ route('check.quality') }}">Product Quality Assurance</a></li>
                          <li><a href="{{ route('purchase.all') }}">All Included Products</a></li>
                          <li><a href="{{ route('purchase.pending') }}">Pending Products</a></li>
                      </ul>
-                 </li> --}}
+                 </li>
 
                  <li class="menu-title">Basic Functions</li>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\AgroController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\DefaultController;
@@ -11,10 +12,14 @@ use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\StockController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
+
+
+
 
 Route::middleware('auth')->group(function () {
     // Admin All Route
@@ -142,6 +147,20 @@ Route::middleware('auth')->group(function () {
         Route::get('/product/wise/pdf', 'productWisePdf')->name('product.wise.pdf');
     });
 
+    // Stock manage
+    Route::controller(AgroController::class)->group(function () {
+        Route::get('/check/quality', 'checkQuality')->name('check.quality');
+        Route::post('/upload/image', 'uploadImage')->name('upload.image');
+
+
+    });
+
+
+
+
+
+
+
 
     // Default all route
     Route::controller(DefaultController::class)->group(function () {
@@ -152,8 +171,9 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
-
+if (!Auth::check() && Route::get('/',function(){
+     return view('auth.login');
+}))
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth'])->name('dashboard');

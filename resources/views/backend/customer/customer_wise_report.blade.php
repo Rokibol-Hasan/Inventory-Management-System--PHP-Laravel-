@@ -41,7 +41,8 @@
 
                             <!--  /// Customer Credit Wise  -->
                             <div class="show_credit" style="display:none">
-                                <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm" target="_blank" >
+                                <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm"
+                                    target="_blank">
 
 
                                     <div class="row">
@@ -68,7 +69,8 @@
 
                             <!--  /// show_paid  -->
                             <div class="show_paid" style="display:none">
-                                <form method="GET" action="{{ route('customer.wise.paid.report') }}" id="myForm" target="_blank" >
+                                <form method="GET" action="{{ route('customer.wise.paid.report') }}" id="myForm"
+                                    target="_blank">
 
 
                                     <div class="row">

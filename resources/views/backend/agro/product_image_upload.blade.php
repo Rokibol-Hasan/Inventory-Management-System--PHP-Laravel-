@@ -38,8 +38,16 @@
                                     <div class="col-sm-10">
                                         <img src="{{ asset($image->product_image) }}">
                                         <div class="mt-3">
-                                            <span class="" style="background-color:rgb(251, 244, 147); border-radius:5px; padding:10px 5px;"> {{ Str::contains($image, 'fresh') ? 'This product is fresh' : 'This product affected by:--- deases ' }}</span>
+                                            <span class=""
+                                                style="background-color:rgb(251, 244, 147); border-radius:5px; padding:10px 5px;">
+                                                {{ Str::contains($image, 'fresh') ? 'This product is fresh' : 'This product affected by:--- deases ' }}</span>
                                         </div>
+
+                                        <form method="post" action="{{ route('post') }}">
+                                            @csrf
+                                            <input type="submit" class="btn btn-info waves-effect waves-light"
+                                                value="Check Status">
+                                        </form>
                                     </div>
 
                                 </div>

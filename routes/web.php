@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Pos\AgroController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
@@ -68,10 +69,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/customer/wise/report', 'CustomerWiseReport')->name('customer.wise.report');
         Route::get('/customer/wise/credit/report', 'CustomerWiseCreditReport')->name('customer.wise.credit.report');
         Route::get('/customer/wise/paid/report', 'CustomerWisePaidReport')->name('customer.wise.paid.report');
-
-
-
-
     });
 
 
@@ -151,12 +148,10 @@ Route::middleware('auth')->group(function () {
     Route::controller(AgroController::class)->group(function () {
         Route::get('/check/quality', 'checkQuality')->name('check.quality');
         Route::post('/upload/image', 'uploadImage')->name('upload.image');
-
-
     });
 
 
-
+    // api routes
 
 
 
@@ -168,13 +163,17 @@ Route::middleware('auth')->group(function () {
         Route::get('/get-product', 'getProduct')->name('get-product');
         Route::get('/check-product-stock', 'getStock')->name('check-product-stock');
     });
+
+
+
+
 });
 
 
-if (!Auth::check() && Route::get('/',function(){
-     return view('auth.login');
+if (!Auth::check() && Route::get('/', function () {
+    return view('auth.login');
 }))
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('admin.index');
+    })->middleware(['auth'])->name('dashboard');
 require __DIR__ . '/auth.php';

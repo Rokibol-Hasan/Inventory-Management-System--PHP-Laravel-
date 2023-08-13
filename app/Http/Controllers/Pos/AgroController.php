@@ -26,6 +26,9 @@ class AgroController extends Controller
             'product_image' => $save_url,
             'created_at' => Carbon::now(),
         ]);
+        return response()->json(['message' => 'Uploaded Successfully','product_image' => $save_url]);
+
+
 
         if (Str::contains($name_gen, 'fresh')) {
             $notification = array(
@@ -41,10 +44,7 @@ class AgroController extends Controller
             return redirect()->back()->with($notification);
         }
 
-        // $notification = array(
-        //     'message' => 'Product Uploaded Successfully',
-        //     'alert-type' => 'success',
-        // );
-
     }
+
+
 }

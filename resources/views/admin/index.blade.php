@@ -33,12 +33,12 @@
                 <h4 class="mb-2">1452</h4>
                 <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
             </div>
-            <div class="avatar-sm">
-                <span class="avatar-title bg-light text-primary rounded-3">
-                    <i class="ri-shopping-cart-2-line font-size-24"></i>  
-                </span>
-            </div>
-        </div>                                            
+                <div class="avatar-sm">
+                    <span class="avatar-title bg-light text-primary rounded-3">
+                        <i class="ri-shopping-cart-2-line font-size-24"></i>
+                    </span>
+                </div>
+            </div>   
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
@@ -53,10 +53,10 @@
             </div>
             <div class="avatar-sm">
                 <span class="avatar-title bg-light text-success rounded-3">
-                    <i class="mdi mdi-currency-usd font-size-24"></i>  
+                    <i class="mdi mdi-currency-usd font-size-24"></i>
                 </span>
             </div>
-        </div>                                              
+        </div>
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
@@ -71,10 +71,10 @@
             </div>
             <div class="avatar-sm">
                 <span class="avatar-title bg-light text-primary rounded-3">
-                    <i class="ri-user-3-line font-size-24"></i>  
+                    <i class="ri-user-3-line font-size-24"></i>
                 </span>
             </div>
-        </div>                                              
+        </div>
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
@@ -89,17 +89,17 @@
             </div>
             <div class="avatar-sm">
                 <span class="avatar-title bg-light text-success rounded-3">
-                    <i class="mdi mdi-currency-btc font-size-24"></i>  
+                    <i class="mdi mdi-currency-btc font-size-24"></i>
                 </span>
             </div>
-        </div>                                              
+        </div>
     </div><!-- end cardbody -->
 </div><!-- end card -->
 </div><!-- end col -->
 </div><!-- end row -->
 
 <div class="row">
- 
+
 
 <div class="row">
 <div class="col-xl-12">
@@ -109,7 +109,7 @@
             <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="mdi mdi-dots-vertical"></i>
             </a>
-         
+
         </div>
 
         <h4 class="card-title mb-4">Latest Transactions</h4>
@@ -239,7 +239,7 @@
 </div><!-- end card -->
 </div>
 <!-- end col -->
- 
+
 
 
 </div>
